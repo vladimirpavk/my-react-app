@@ -1,4 +1,7 @@
 import React from 'react';
+import WelcomeComponent from './welcomeComponent';
+import ClockComponent from './clock/clockComponent';
+
 import './App.css';
 
 function formatName(user){
@@ -10,14 +13,23 @@ const user1 = {
   lastname: 'Pavković'
 }
 
-function App() {
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
         { formatName(user1) }
       </header>
+      <WelcomeComponent name={formatName(user1)} />
     </div>
   );
+} */
+
+function App() {
+  return(
+    <div>
+      <ClockComponent />
+    </div>
+  )
 }
 
 export default App;
