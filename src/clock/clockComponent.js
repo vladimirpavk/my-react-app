@@ -10,7 +10,7 @@ export default class Clock extends React.Component{
             alarmOn: false
         };
 
-        this.timerClicked = this.timerClicked.bind(this);
+        //this.timerClicked = this.timerClicked.bind(this);
     }
 
     componentDidMount(){
@@ -29,8 +29,8 @@ export default class Clock extends React.Component{
         clearInterval(this.timerID);
     }
 
-    timerClicked(){
-        console.log(this.state);
+    timerClicked = (name, e)=>{        
+        console.log(e);
         this.setState({
             alarmOn : !this.state.alarmOn
         });
@@ -40,7 +40,7 @@ export default class Clock extends React.Component{
         return(
             <div>
                 <h1>I'm The clock</h1>
-                <h2 onClick={this.timerClicked}>{this.state.date.toLocaleTimeString()}</h2>
+                <h2 onClick={(name)=>{this.timerClicked('Vladimir', name)}}>{this.state.date.toLocaleTimeString()}</h2>
                 <h3>Alarm is {this.state.alarmOn ? 'ON' : 'OFF'}</h3>
             </div>            
         );
