@@ -21,7 +21,7 @@ export default class Clock extends React.Component{
     }
 
     tick(){
-        console.log('tick() fired...');
+        //console.log('tick() fired...');
         this.setState({date : new Date()});
         
     }   

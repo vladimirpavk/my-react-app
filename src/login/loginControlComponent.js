@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginButtonComponent from './loginButtonComponent';
 import LogoutButtonComponent from './logoutButtonComponent';
+import GreetingComponent from '../greeting/greetingComponent';
 
 export default class LoginControlComponent extends React.Component{
 
@@ -24,12 +25,22 @@ export default class LoginControlComponent extends React.Component{
         })
     }
 
-    render(){       
+    render(){
+
+        let button;
+        
         if(this.state.isLoggedIn){
-            return <LogoutButtonComponent buttonClickedHandler={logOutButtonClicked} />;
+            button = <LogoutButtonComponent buttonClickedHandler={this.logOutButtonClicked} />;
         }
         else{
-            return <LoginButtonComponent buttonClickedHandler={logInButtonClicked} />;
+            button = <LoginButtonComponent buttonClickedHandler={this.logInButtonClicked} />;
         }
+
+        return(
+            <div>
+                <GreetingComponent isLoggedIn={this.state.isLoggedIn} />
+                {button}
+            </div>         
+        )
     }
 }

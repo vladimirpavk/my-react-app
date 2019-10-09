@@ -2,6 +2,9 @@ import React from 'react';
 import WelcomeComponent from './welcomeComponent';
 import ClockComponent from './clock/clockComponent';
 import GreetingComponent from './greeting/greetingComponent'
+import LoginControlComponent from './login/loginControlComponent';
+import NumberListComponent from './number/numberListComponent';
+import FormComponent from './forms/formComponents';
 
 import './App.css';
 
@@ -29,7 +32,9 @@ function App() {
   return(
     <div>
       <ClockComponent />
-      <GreetingComponent isLoggedIn={false} />
+      <LoginControlComponent />
+      <NumberListComponent numbers={[1, 2, 3, 4, 5, 6]} />
+      <FormComponent />
     </div>
   )
 }
