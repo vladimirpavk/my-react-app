@@ -5,6 +5,7 @@ import GreetingComponent from './greeting/greetingComponent'
 import LoginControlComponent from './login/loginControlComponent';
 import NumberListComponent from './number/numberListComponent';
 import FormComponent from './forms/formComponents';
+import TemperatureComponent from './temperature/temperatureComponent';
 
 import './App.css';
 
@@ -35,6 +36,7 @@ function App() {
       <LoginControlComponent />
       <NumberListComponent numbers={[1, 2, 3, 4, 5, 6]} />
       <FormComponent />
+      <TemperatureComponent />
     </div>
   )
 }
