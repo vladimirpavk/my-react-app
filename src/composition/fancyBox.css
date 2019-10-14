@@ -1,0 +1,13 @@
+.headingClass{
+    background-color: rgb(105, 105, 105);
+    color: black;
+    /*border: 1px solid green;*/
+    border-style: solid, solid, dashed, solid;
+    border-width: 1px;
+    border-color: rgb(80, 80, 80);
+}
+
+.postClass{
+    color: green;
+    border: 1px solid red;
+}

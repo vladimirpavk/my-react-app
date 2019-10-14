@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './fancyBox.css';
+
 export default class FancyBox extends React.Component{
     constructor(props){
         super(props);
@@ -7,11 +9,14 @@ export default class FancyBox extends React.Component{
     render(){
         return(
             <div width="300px">
-                <div class="headingClass">
-                    {props.heading}
+                <div className="headingClass">
+                    {this.props.heading}
                 </div>
-                <div class="postClass">
-                    {props.children}
+                <div className="postClass">
+                    {this.props.post}
+                </div>
+                <div>
+                    {this.props.children}
                 </div>
             </div>
         );

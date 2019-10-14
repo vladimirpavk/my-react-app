@@ -6,6 +6,7 @@ import LoginControlComponent from './login/loginControlComponent';
 import NumberListComponent from './number/numberListComponent';
 import FormComponent from './forms/formComponents';
 import TemperatureComponent from './temperature/temperatureComponent';
+import FancyBoxComponent from './composition/fancyBox';
 
 import './App.css';
 
@@ -37,6 +38,11 @@ function App() {
       <NumberListComponent numbers={[1, 2, 3, 4, 5, 6]} />
       <FormComponent />
       <TemperatureComponent />
+      <FancyBoxComponent
+        heading={<h3>Post heading</h3>}
+        post={<p>Post body</p>}>
+        <p>Pavle Pavković</p>
+      </FancyBoxComponent>
     </div>
   )
 }
