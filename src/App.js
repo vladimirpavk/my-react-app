@@ -8,6 +8,9 @@ import FormComponent from './forms/formComponents';
 import TemperatureComponent from './temperature/temperatureComponent';
 import FancyBoxComponent from './composition/fancyBox';
 
+import { ThemeContext } from './Context';
+import ToolBar from './context/toolbar';
+
 import './App.css';
 
 function formatName(user){
@@ -33,6 +36,11 @@ const user1 = {
 function App() {
   return(
     <div>
+      
+      <ThemeContext.Provider theme="lightThemeFromContext">
+        <ToolBar />
+      </ThemeContext.Provider>  
+
       <ClockComponent />
       <LoginControlComponent />
       <NumberListComponent numbers={[1, 2, 3, 4, 5, 6]} />

@@ -1,10 +1,12 @@
 import React from 'react';
+import ThemedButton from './themedButton';
 
-export default class ToolBarComponent extends React.Component{
+export default class ToolBar extends React.Component{
     render(){
         return(
             <div>
-                <ThemedButtonComponent />
+                <p>ToolBar component</p>
+                <ThemedButton />                
             </div>
         )
     }
