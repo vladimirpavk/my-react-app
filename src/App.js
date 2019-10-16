@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeComponent from './welcomeComponent';
+/* import WelcomeComponent from './welcomeComponent';
 import ClockComponent from './clock/clockComponent';
 import GreetingComponent from './greeting/greetingComponent'
 import LoginControlComponent from './login/loginControlComponent';
@@ -9,7 +9,9 @@ import TemperatureComponent from './temperature/temperatureComponent';
 import FancyBoxComponent from './composition/fancyBox';
 
 import { ThemeContext } from './Context';
-import ToolBar from './context/toolbar';
+import ToolBar from './context/toolbar'; */
+
+import UdemyComponent from './udemy/udemyComponent';
 
 import './App.css';
 
@@ -22,22 +24,11 @@ const user1 = {
   lastname: 'Pavković'
 }
 
-/* function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        { formatName(user1) }
-      </header>
-      <WelcomeComponent name={formatName(user1)} />
-    </div>
-  );
-} */
-
 function App() {
   return(
     <div>
       
-      <ThemeContext.Provider theme="lightThemeFromContext">
+       {/* <ThemeContext.Provider theme="lightThemeFromContext">
         <ToolBar />
       </ThemeContext.Provider>  
 
@@ -50,7 +41,10 @@ function App() {
         heading={<h3>Post heading</h3>}
         post={<p>Post body</p>}>
         <p>Pavle Pavković</p>
-      </FancyBoxComponent>
+      </FancyBoxComponent> */}
+
+      <UdemyComponent />
+
     </div>
   )
 }

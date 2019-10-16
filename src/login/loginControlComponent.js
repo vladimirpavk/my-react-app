@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import LoginButtonComponent from './loginButtonComponent';
 import LogoutButtonComponent from './logoutButtonComponent';
 import GreetingComponent from '../greeting/greetingComponent';
