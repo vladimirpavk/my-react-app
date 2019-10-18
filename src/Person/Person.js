@@ -5,7 +5,9 @@ const person = (props)=>{
         <div>
             <h2>Hi! I'm {props.name}</h2>
             <h3>I'm {props.age} years old. </h3>
-            {props.children}
+            <p>
+                {props.children}
+            </p>
         </div>
     );
 }

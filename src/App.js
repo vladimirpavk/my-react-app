@@ -1,60 +1,29 @@
-
-/* import WelcomeComponent from './welcomeComponent';
-import ClockComponent from './clock/clockComponent';
-import GreetingComponent from './greeting/greetingComponent'
-import LoginControlComponent from './login/loginControlComponent';
-import NumberListComponent from './number/numberListComponent';
-import FormComponent from './forms/formComponents';
-import TemperatureComponent from './temperature/temperatureComponent';
-import FancyBoxComponent from './composition/fancyBox';
-
-import { ThemeContext } from './Context';
-import ToolBar from './context/toolbar'; */
-//import UdemyComponent from './udemy/udemyComponent';
-
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import Person from './Person/Person';
+
 import Persons from './Persons/Persons';
 
-/* function formatName(user){
-  return user.name + ' ' + user.lastname;
-}
+class App extends Component {
 
-const user1 = {
-  name: 'Pavle',
-  lastname: 'Pavković'
-} */
+  constructor(){
+    super();
 
-function App() {
-  return(
-    <div>
-      {/* <Person name="Pavle Pavković" age="6"/>
-      <Person name="Vladimir Pavković" age="42"/>
-      <Person name="Nataša Pavković" age="45">
-        <h2>My hobbie is knitting</h2>
-      </Person> */}
+    this.state = {
+      persons:[
+        { id:1, name: 'Pavle Pavković', age:6, addons: 'No additional informations' },
+        { id:2, name: 'Nataša Pavković', age:45, addons: 'My hobbie is knitting' },
+        { id:3, name: 'Vladimir Pavković', age:42, addons: 'Sleeping' }
+      ]
+    }    
+  }
 
-      <Persons />
-       {/* <ThemeContext.Provider theme="lightThemeFromContext">
-        <ToolBar />
-      </ThemeContext.Provider>  
-
-      <ClockComponent />
-      <LoginControlComponent />
-      <NumberListComponent numbers={[1, 2, 3, 4, 5, 6]} />
-      <FormComponent />
-      <TemperatureComponent />
-      <FancyBoxComponent
-        heading={<h3>Post heading</h3>}
-        post={<p>Post body</p>}>
-        <p>Pavle Pavković</p>
-      </FancyBoxComponent> 
-
-      <UdemyComponent />*/}
-
-    </div>
-  )
+  render(){
+    return(
+      <div>
+        <Persons persons={this.state.persons}/>
+      </div>
+    );
+  } 
 }
 
 export default App;

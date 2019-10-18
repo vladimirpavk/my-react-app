@@ -1,34 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Persons extends Component{
-    constructor(){
-        super();
-        this.state={
-            persons:[
-                { name: 'Pavle Pavković', age:6, addons: 'No additional informations' },
-                { name: 'Nataša Pavković', age:45, addons: 'My hobbie is knitting' },
-                { name: 'Vladimir Pavković', age:42, addons: 'Sleeping' }
-            ]
-        };        
-    }
+import Person from '../Person/Person';
 
-    render(){
+const Persons = (props)=>{     
         const items = [];
         
-        this.state.persons.map(
+        props.persons.map(
             (person)=>{
                 items.push(
-                    <div>
-                        <h1>My name is {person.name}.</h1>
-                        <h2>I'm {person.age} years old</h2>
-                        <p>{person.addons}</p>
-                    </div>
+                    <Person
+                        key={person.id.toString()}
+                        name={person.name}
+                        age={person.age}>
+                            {person.addons}
+                    </Person>
                 )                                           
             }
         )
 
-        return items;
-    }
+        return items;    
 }
 
 export default Persons;
