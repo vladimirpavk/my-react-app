@@ -3,6 +3,8 @@ import './App.css';
 
 import Persons from './Persons/Persons';
 
+import MyList from './MyListComponent/MyList';
+
 class App extends Component {
 
   constructor(){
@@ -17,11 +19,21 @@ class App extends Component {
     }    
   }
 
+  onButtonClickHandler = (e)=>{
+    //this.state.persons[1].name='Nikola';
+  /*   this.setState({
+      ...this.state.persons, name: 'Nikola'}
+    }); */    
+    console.log(e, this.state);
+  }
+
   render(){
     return(
-      <div>
+     /*  <div>
         <Persons persons={this.state.persons}/>
-      </div>
+        <button onClick={this.onButtonClickHandler}>Change name</button>
+      </div> */
+      <MyList />
     );
   } 
 }
