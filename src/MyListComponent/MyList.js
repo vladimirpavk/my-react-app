@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 const INITIAL_STATE = {
-    list : [1, 2, 3],
+    list : [
+        { id: 1, name: 'Pavle' },
+        { id: 2, name: 'Vladimir'},
+        { id: 3, name: 'Nataša'}
+    ],
     value : ''
 };
 
@@ -77,7 +81,7 @@ class MyList extends Component{
         }); */
     }
 
-    elementClicked = (elementIndex)=>{
+   /*  elementClicked = (elementIndex)=>{
         //console.log('Element clicked...', e);
         //const listElementIndex = this.state.list.indexOf(listElement);
         const newList = this.state.list.slice();
@@ -88,18 +92,40 @@ class MyList extends Component{
         this.setState({
             list : newList
         });
+    } */
+    elementClicked = (listElement)=>{
+        
+        const foundElementIndex = this.state.list.indexOf(listElement);
+        const newArray = this.state.list.slice();
+        newArray[foundElementIndex].id += 1;
+
+        this.setState({
+            list : newArray
+        });
     }
 
-    removeElement = (index, e)=>{
-        const partOne = this.state.list.slice(0, index);
+    /* removeElement = (index, e)=>{
+         const partOne = this.state.list.slice(0, index);
         const partTwo = this.state.list.slice(index+1);
 
         const newList = partOne.concat(partTwo);
         
         this.setState({
             list : newList
-        });
-    }
+        }); 
+    } */
+
+    removeElement = (listElement, e)=>{      
+         const filteredList = this.state.list.filter(
+             (element)=>{
+                 if (element !== listElement) return element;
+                 return null;
+             }
+         );
+         this.setState({
+             list: filteredList
+         });
+     }
 
     render(){
         return(
@@ -111,9 +137,9 @@ class MyList extends Component{
                             (listElement, index)=>{
                                 return(
                                     <div key={1000*index}>
-                                        <li>Element {listElement}</li>
-                                        <button onClick={(e)=>this.elementClicked(index)}>Increase by 1</button>
-                                        <button onClick={(e)=>this.removeElement(index)}>Remove</button>
+                                        <li>Element {listElement.id} - {listElement.name}</li>
+                                        <button onClick={(e)=>this.elementClicked(listElement)}>Increase by 1</button>
+                                        <button onClick={(e)=>this.removeElement(listElement)}>Remove</button>
                                     </div>
                                 );
                             }
