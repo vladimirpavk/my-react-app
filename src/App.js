@@ -5,6 +5,8 @@ import Persons from './Persons/Persons';
 
 import MyList from './MyListComponent/MyList';
 
+import Watch from './watch/watch';
+
 class App extends Component {
 
   constructor(){
@@ -32,8 +34,9 @@ class App extends Component {
      /*  <div>
         <Persons persons={this.state.persons}/>
         <button onClick={this.onButtonClickHandler}>Change name</button>
-      </div> */
-      <MyList />
+      </div> 
+      <MyList />*/
+      <Watch />
     );
   } 
 }
