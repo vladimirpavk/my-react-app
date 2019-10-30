@@ -11,6 +11,8 @@ import UserInput from './Assignment/UserInput';
 import ValidationComponent from './Assignment 2/ValidationComponent';
 import CharComponent from './Assignment 2/CharComponent';
 
+import StyledButton from './Styling/StyledButton';
+
 class App extends Component {
 
   constructor(){
@@ -105,7 +107,7 @@ class App extends Component {
         <button onClick={(event)=>this.changeUsername('Vladimir', event)}>Change username</button>
         <UserOutput showParagraph1="false" username="Nataša"/>
       </div>*/
-
+      /*
       <div>
         <input onInput={(e)=>this.onInputChanged(e)} placeholder="Enter any text" value={this.state.inputValueText} />
         <p>Text length is {this.state.inputValueLength} characters...</p>
@@ -116,6 +118,8 @@ class App extends Component {
           })
         }        
       </div>
+      */
+     <StyledButton />
     );
   } 
 }
