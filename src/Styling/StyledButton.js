@@ -27,6 +27,9 @@ const StyledButton = ()=>{
         });
     }
 
+    const rnd = Math.random();
+    if(rnd > 0.5) throw new Error('The resistor 2303 is out of order...');
+
     return(     
         <button
             onClick={()=>toggleButtonClicked()}

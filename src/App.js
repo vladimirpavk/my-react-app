@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import klasses from './MyCssModule.module.css';
+
 /* import Persons from './Persons/Persons';
 import MyList from './MyListComponent/MyList';
 import Watch from './watch/watch'; 
@@ -12,6 +14,7 @@ import ValidationComponent from './Assignment 2/ValidationComponent';
 import CharComponent from './Assignment 2/CharComponent';
 
 import StyledButton from './Styling/StyledButton';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
 
@@ -119,7 +122,12 @@ class App extends Component {
         }        
       </div>
       */
-     <StyledButton />
+     <div>
+      <button className={klasses.red}>Samo proba za stil</button>
+      <ErrorBoundary>
+        <StyledButton />
+      </ErrorBoundary>      
+     </div>
     );
   } 
 }
